@@ -1,0 +1,69 @@
+
+
+> bitcoind -regtest -daemon
+Bitcoin server starting
+Start bitcoind in regtest mode to create a private block chain.
+
+bitcoin-cli -regtest stop
+
+
+
+## Bitcoin Core master (as of commit 48265f3)
+bitcoin-cli -regtest generate 101
+
+
+bitcoin-cli -regtest getbalance
+50.00000000
+
+
+bitcoin-cli -regtest listunspent
+
+
+bitcoin-cli -regtest getnewaddress
+NEW_ADDRESS=mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
+
+ bitcoin-cli -regtest sendtoaddress $NEW_ADDRESS 10.00
+
+
+
+ bitcoin-cli -regtest listunspent 0 //cero display unconfirmed transactions
+
+
+ ## Later versions of Bitcoin Core
+> bitcoin-cli -regtest generate 1
+
+> unset NEW_ADDRESS
+
+//creata a new block that confirms the transactions and clear the shell
+
+The raw transaction RPCs allow users to create custom transactions and delay broadcasting those transactions
+
+
+
+bitcoin-cli -regtest dumpprivkey $UTXO2_ADDRESS
+
+
+
+bitcointestnetfaucet.com
+bitcointestnetfaucet.com/#withdrawl-amount
+
+
+
+
+
+
+
+
+
+flow
+  create a private key
+  convert the private key to address
+    address:{
+      address: "",
+      type: pubkeyhash,
+      network: testnet
+    }
+    minimum fee and sign transaction
+     fee https://live.blockcypher.com/btc-testnet/
+
+  create a transaction

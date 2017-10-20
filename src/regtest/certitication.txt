@@ -1,0 +1,83 @@
+
+
+
+
+funding certificate batch
+
+
+issue certificate system
+issue certificate blockchain/ipfs
+
+
+validate certificate system
+validate certificate blockchain/ipfs
+
+
+revoke certificate system
+revoke certificate blockchain/ipfs
+
+
+
+
+#########
+Fund certificate batch flow
+
+
+
+generate new batches
+
+institution id
+number of batch to want
+
+
+retrieve the last batch id
+
+(validate system has enough amount)
+
+generate derived address -> another proccess
+
+
+save the ws_tx_id
+
+save the certificate_batches
+
+
+
+
+
+
+confirm the batches
+
+
+receive confirmation by id
+  save tx_id, tx_hex
+  save
+
+
+
+
+
+
+
+###############
+
+derived
+
+
+            Funding                             Issuing                             Revoke
+
+
+Source                      Fund Address                       Certificate Address              Revocation student address
+System                      derivedSystem                      derivedSystem                    derivedSystem
+                            derivedInstitute                   derivedInstitute                 derivedInstitute
+
+
+
+
+
+
+
+
+
+  id_instituto           / 0 / 999 999 999                     / 0 / 999 999 999               /0 / 999 999 999
+  id_instituto           / 0 / 999 999 999                     / 0 / 999 999 999               /0 / 999 999 999

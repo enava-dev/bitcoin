@@ -1,0 +1,25 @@
+{
+  "name": "testbitcoin",
+  "version": "0.0.1",
+  "description": "test bitcoin",
+  "main": "index.js",
+  "dependencies": {
+    "bip38": "^1.4.0",
+    "bitcoind-rpc": "^0.6.0",
+    "bitcore-explorers": "^1.0.1",
+    "bitcore-lib": "^0.13.19",
+    "bitcore-node": "^3.1.2",
+    "insight-api": "^0.4.3",
+    "merkle-tools": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "bitcoin"
+  ],
+  "author": "test",
+  "license": "ISC"
+}

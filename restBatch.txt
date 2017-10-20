@@ -1,0 +1,227 @@
+
+bitcore
+bitcore daemon
+bitcore node
+bitcore services
+
+npm install -g bitcore
+$ bitcored
+
+
+non-global
+bitcore create mynode --testnet
+
+
+hd pkey
+
+
+
+
+
+
+
+login to certifications system
+register into certifications system  (institute, student)
+register courses offered by an institute
+register students of an institution
+confirm student information
+
+te
+C   post
+R   get
+U   put     update/replace
+U   patch   update/modify
+D   delete
+
+
+
+
+
+
+
+
+
+
+
+instituteEndpoint.createCourseInstitue = function(req, res, next){
+    console.log('instituteId: ', req.params.instituteId);
+    console.log('body: ', req.body);
+
+    res.send(200, {"data":"ok"});
+    next();
+
+};
+
+{
+        route: '/:instituteId/course',
+        method: 'post',
+        action: 'createCourseInstitue',
+        validation: {
+            resources: {
+                instituteId: {
+                    isRequired: true,
+                    isInt: true
+                }
+            },
+            content: {
+                name: {
+                    isRequired: true,
+                    isAlpha: true
+                },
+                description: {
+                    isRequired: true,
+                    isAlpha: true
+                },
+                subCategoryCourse: {
+                    isRequired: true,
+                    isAlphanumeric: true
+                }
+            }
+        }
+
+    },
+
+
+
+
+
+
+
+
+request
+
+batch=[{“method”:”GET”, “relative_url”:”me”},{“method”:”GET”, “relative_url”:”me/friends?limit=50”}]
+
+
+
+response
+[
+    { “code”: 200,
+      “headers”:[
+          { “name”: ”Content-Type”,
+            “value”: ”text/javascript; charset=UTF-8” }
+      ],
+      “body”: ”{\”id\”:\”…\”}”},
+    { “code”: 200,
+      “headers”:[
+          { “name”:”Content-Type”,
+            “value”:”text/javascript; charset=UTF-8”}
+      ],
+      “body”:”{\”data\”: [{…}]}}
+]
+
+
+
+request
+
+batch=[
+    { “method”:”POST”,
+    “relative_url”:”me/feed”,
+    “body”:”message=Test status update&amp;link=http://developers.facebook.com/”
+    },
+    {
+    “method”:”GET”,
+    “relative_url”:”me/feed?limit=1”
+    }
+]
+
+
+response
+[
+    { “code”: 200,
+      “headers”: [
+          { “name”:”Content-Type”,
+            “value”:”text/javascript; charset=UTF-8”}
+       ],
+      “body”:”{\”id\”:\”…\”}”
+    },
+    { “code”: 200,
+      “headers”: [
+          { “name”:”Content-Type”,
+            “value”:”text/javascript; charset=UTF-8”
+          },
+          { “name”:”ETag”,
+            “value”: ”…”
+          }
+      ],
+      “body”: ”{\”data\”: [{…}]}
+    }
+]
+
+
+
+
+Error
+
+[
+    { “code”: 403,
+      “headers”: [
+          {“name”:”WWW-Authenticate”, “value”:”OAuth…”},
+          {“name”:”Content-Type”, “value”:”text/javascript; charset=UTF-8”} ],
+      “body”: “{\”error\”:{\”type\”:\”OAuthException\”, … }}”
+    }
+]
+
+
+
+
+
+
+batch=[
+    {
+    "method":"GET",
+    "name":"get-friends",
+    "relative_url":"me/friends?limit=5",
+    },
+    {
+    "method":"GET",
+    "relative_url":"?ids={result=get-friends:$.data.*.id}"
+    }]' \
+
+
+
+
+
+
+
+batch=[
+    {
+    "method":"GET",
+    "name":"get-friends",
+    "relative_url":"me/friends?limit=5",
+    "omit_response_on_success":false,
+    },
+    {
+    "method":"GET",
+    "relative_url":"?ids={result=get-friends:$.data.*.id}"
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+curl
+     -F 'access_token=…' \
+     -F 'batch=[
+        {
+        “method”:”POST”,
+        “relative_url”:”me/photos”,
+        “body”:”message=My cat photo”,
+        "attached_files":"file1"
+        },
+        {
+        “method”:”POST”,
+        “relative_url”:”me/photos”,
+        “body”:”message=My dog photo”,
+        "attached_files":"file2"},]' \
+     -F 'file1=@cat.gif' \
+     -F 'file2=@dog.jpg' \
+    https://graph.facebook.com

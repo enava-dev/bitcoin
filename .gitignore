@@ -1,5 +1,8 @@
 
-# Created by https://www.gitignore.io/api/node,visualstudiocode
+# Created by https://www.gitignore.io/api/git,node,visualstudiocode
+
+### Git ###
+*.orig
 
 ### Node ###
 # Logs
@@ -70,4 +73,4 @@ typings/
 !.vscode/extensions.json
 .history
 
-# End of https://www.gitignore.io/api/node,visualstudiocode
+# End of https://www.gitignore.io/api/git,node,visualstudiocode
